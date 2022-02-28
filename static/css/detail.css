@@ -1,0 +1,230 @@
+#jnProitem{
+	float: left;
+	width: 500px;
+	height: 700px;
+	display: inline;
+}
+#jnProitem .jdzoomWrap{
+	float: left;
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#jnProitem .jdzoomWrap  img{ width:620px; height:450px}
+#jnProitem span{
+	margin: 0 110px ;
+	margin-bottom: 0;
+	margin-left: 240px;
+	float: left;
+}
+#jnProitem span img{width:100px; height:35px}
+
+#jnDetails{
+	position: relative;
+	margin-top:30px;
+	float: right;
+	width: 400px;
+	padding-left: 20px;
+}
+#jnDetails h4{
+	font-family: courier new,courier,monospace;/* 改字体 */
+    font-size: 20px;
+	text-align:center;
+}
+#jnDetails li{
+	font-family: courier new,courier,monospace;/* 改字体 */
+    font-size: 20px;
+	text-align:left;
+}
+#jnDetails .jnProDetailList>lii{
+	margin-top:0px;
+	font-size:25px;
+	width: 100%;
+   line-height: 25px;
+   float: left;
+   text-align:center;
+}
+#jnDetails .jnProDetailList>liii{
+   margin-top:25px;
+   font-size:18px;
+   line-height: 25px;
+   float: left;
+   width: 100%;
+   text-align:center;
+}
+#jnDetails liv{
+	font-family: courier new,courier,monospace;/* 改字体 */
+    font-size: 20px;
+	text-align:left;
+}
+#jnDetails lv{
+	font-family: courier new,courier,monospace;/* 改字体 */
+    font-size: 20px;
+	text-align:left;
+}
+#jnDetails .jnProDetailList>li{
+   margin-top:10px;
+   font-size:18px;
+   line-height: 25px;
+   float: left;
+   width: 100%;
+   text-align:center;
+}
+#jnDetails .jnProDetailList>liv{
+   margin-top:10px;
+   font-size:18px;
+   line-height: 25px;
+   float: left;
+   width: 100%;
+   text-align:left;
+}
+#jnDetails .jnProDetailList>lv{
+   margin-top:10px;
+   font-size:18px;
+   line-height: 25px;
+   float: left;
+   width: 100%;
+   text-align:left;
+}
+#jnDetails .jnProDetailList strong{
+	font-weight: bold;
+	font-size:14px;
+}
+#jnDetails .tbDetailPrice strong{
+	font-weight: 600;
+    color: #FF5500;
+    font: 20px courier new,courier,monospace;/* 字体设置 */
+    padding-right: 10px;
+    vertical-align: middle;/* 让这个200 在垂直方向上  中间对其*/
+}
+   /* 颜色设置 */
+#jnDetails .pro_color strong{
+    font-weight: normal;
+}
+#jnDetails .pro_color li{
+	float: left;
+	margin-right: 10px;
+	width: 35px;
+	height: 35px;
+	border: 1px solid #BBB;
+}
+#jnDetails .pro_color li img{
+	width: 34px;
+	height: 34px;
+}
+#jnDetails .pro_color li:hover{
+	border: 1px solid #FF5500;
+}
+
+
+#jnDetails .pro_size li{
+	float: left;
+	margin-top:10px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #BBB;
+	margin-right: 10px;
+	font-size:18px;
+	line-height: 30px;
+	text-align: center;
+}
+#jnDetails .pro_stock liv{
+	float: left;
+	margin-top: 10px;
+	width: 80px;
+	height: 80px;
+	border: 1px solid #BBB;
+	margin-right: 10px;
+	font-size:18px;
+	line-height: 30px;
+	text-align: center;
+}
+#jnDetails .pro_size select{
+	float: left;
+	margin-top:10px;
+	margin-left: 10px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	font-size:20px;
+	line-height: 30px;
+	text-align: center;
+}
+
+#jnDetails .pro_size span{
+	margin-top: 20px;
+	margin-bottom: 0;
+	margin-left: 10px;
+	font-size: 27px;
+	float: left;
+}
+#jnDetails .pro_size ul{
+	margin-top: 10px;
+	margin-bottom: 0;
+	margin-left: 10px;
+	font-size: 27px;
+	float: left;
+}
+#jnDetails .pro_size strong{
+	font-size:24px;
+	margin-top: 20px;
+	float: left;
+}
+#jnDetails .pro_count span{
+	margin-top: 20px;
+	margin-bottom: 0;
+	margin-left: 10px;
+	font-size: 27px;
+	float: left;
+}
+#jnDetails .pro_stock strong{
+	font-size:20px;
+	margin-top: 20px;
+	float: left;
+}
+#jnDetails .pro_stock span{
+	margin-top: 20px;
+	margin-bottom: 0;
+	margin-left: 10px;
+	font-size: 27px;
+	float: left;
+}
+#jnDetails .pro_count select{
+	margin-top: -110px;
+    display: block;
+	width: 50px;
+	height: 50px;
+	margin-left: 140px;
+	font-size:20px;
+	line-height: 30px;
+	text-align: center;
+	float:left;
+}
+#jnDetails .pro_count strong{
+	margin-top: 50px;
+	margin-left: 0px;
+	font-size: 15px;
+	float: left;
+}
+
+
+#jnDetails #cart{
+	clear: both;
+	margin-top: 20px;
+}
+  #jnDetails #cart input{
+	width:300px;
+	height:60px;
+	margin-top: 80px;
+	margin-left: 100px;
+}
+#jnDetails #scar a{
+	font: 14px courier new,courier,monospace;/* 字体设置 */
+}
+#jnDetails #scar em{
+	position: absolute;
+   top:-3px;
+   right:0px;
+   color:red;
+}

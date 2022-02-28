@@ -25,7 +25,7 @@ SECRET_KEY = '1zhygs!)0uc)m8lrcwyv@)yilu*0cw)q$f1w8gjohcy=dewon('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Glasneaker'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'Sneaker_Shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -116,5 +117,13 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [STATIC_DIR,
+    ("css", os.path.join(STATIC_DIR, 'css')),
+    ("js", os.path.join(STATIC_DIR, 'js')),
+    ]
+
+

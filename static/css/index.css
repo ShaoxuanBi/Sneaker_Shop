@@ -1,0 +1,128 @@
+ .container{  
+        width:1000px;  
+        height: 560px;
+        margin:0px auto;  
+        overflow: hidden;  
+        position: relative;
+    }  
+    .container .imgcss{  
+        animation:scoll 60s linear 0s infinite;  
+    } 
+    .container .textcss {
+        animation:textScroll 6s linear 0s infinite;  
+    }
+    .container ul {
+        width:6185px;  
+        left:0;  
+        top:0;  
+        position: absolute;  
+    }
+    .container ul:hover {
+        animation-play-state: paused;
+    } 
+    .container ul li{  
+        float:left;  
+    }  
+    @keyframes scoll{  
+        from{  
+            left:0;  
+        }  
+        to{  
+            left:-6144px;  
+        }  
+    }   
+    @keyframes textScroll{  
+        from{  
+            left:0;  
+        }  
+        to{  
+            left:0px;  
+        }  
+    }   
+
+#jnBrandContent{
+	overflow: hidden;
+	float: left;
+	height: 350px;
+	margin: 5px 5px;
+	width: 2000px;
+	position: relative;
+}
+
+#jnBrandList{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2000px;
+	padding-left: 10px;
+}
+#jnBrandList ul li{
+	float: left;
+	margin:0 130px 0 0px;
+	position: relative;
+	width: 210px;
+}
+#jnBrandContent  li figcaption{
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #666;
+	font-size: 18px;
+	height: 80px;
+	line-height: 20px;
+	margin: 0px 5px 5px 10px;
+	font-family: courier new,courier,monospace;/* 改字体 */
+
+}
+#jnBrandContent  li figcaption:hover{
+	color: #008cd7;
+}
+
+
+#jnBrandContent1{
+	overflow: hidden;
+	float: left;
+	height: 350px;
+	margin: 5px 5px;
+	width: 2000px;
+	position: relative;
+}
+
+#jnBrandList1{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2000px;
+	padding-left: 10px;
+}
+#jnBrandList1 ul li{
+	float: left;
+	margin:0 130px 0 0px;
+	position: relative;
+	width: 210px;
+}
+#jnBrandContent1  li figcaption{
+	text-align: center;
+	background-color: #FFFFFF;
+	color: #666;
+	font-size: 18px;
+	height: 60px;
+	line-height: 20px;
+	margin: 0px 5px 5px 10px;
+	font-family: courier new,courier,monospace;/* 改字体 */
+
+}
+#jnBrandContent1  li figcaption:hover{
+	color: #008cd7;
+}
+
+
+.imgOver{
+	background: url("../images/zoom.gif") no-repeat 50% 50% ;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+}
+/* 缺少内容 */
+/* 点击，无缝切换 */
+
+
+

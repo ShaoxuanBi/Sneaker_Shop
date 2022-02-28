@@ -1,0 +1,108 @@
+    #header{/* 目的是自适应，保持最宽 */
+         background: url("../images/headerbg.png")    scroll 0 0 #888888;/* 默认重复，背景图片尺寸可选 */
+         height: 100px;
+     }
+     #header .contWitch{
+         position: relative;
+         height: 105px;
+         width: 1200px;
+         margin: 0 auto;
+         z-index: 100;
+         /* background-color: orange; */
+     }
+     #header .logo{
+        float: left; 
+        margin: 18px -20px;
+        color: #FFF;
+       /*  line-height: 80px; */
+    }
+    #header input{
+       /*  margin: 20px auto  auto 40px; */
+       position: absolute;
+       left: 200px;
+       top: 19.5px;
+       height: 20px;
+       width: 300px;
+       padding: 3px 6px 5px 6px;
+       font-size: 14px;
+       color:#888888;
+       font-family: courier new,courier,monospace;/* 改字体 */
+    }  
+
+    .mainNav{
+        position: absolute;
+        top: 60px;
+        left: -130px;
+        width: 1450px;
+        background-color: #444444;
+        height: 48px;
+        line-height: 50px;
+    }
+    .nav{
+         display: inline;
+         margin-left: 300px;
+         float: left;
+    }
+    .nav li{
+        float: left;
+        margin-right: 40px;
+        position: relative;
+    }
+    .nav li>a{
+        text-decoration: none;
+        font-style: normal;
+        font-weight: 200px;
+        color: #FFFFFF;
+        font-size: 18px;
+        font-family:serif;/* 改字体 */
+        padding: 2px 14px;
+    }
+    .nav li>a:hover{
+        background-color: orange;
+        text-decoration: underline;
+    }
+
+
+/*轮播鼠标悬停图片变大*/
+.movieWrap .list div:hover{
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  transform: scale(1.2,1.2);
+}
+
+.movieWrap .list div:hover a{
+  opacity: 0;
+}
+
+#jnBrandList{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1420px;
+  padding-left: 10px;
+}
+#jnBrandList ul li{
+  float: left;
+  margin:0 130px 0 0px;
+  position: relative;
+  width: 210px;
+}
+
+
+
+.lastNav1{
+        position: absolute;
+        top: 1800px;
+        left: 0;
+        width: 1440px;
+        background-color: #444444;
+        height: 48px;
+        line-height: 50px;
+    }
+
+    .logo1{
+        float: left; 
+        margin: 7px 10px 510px 610px;
+        color: #FFF;
+       /*  line-height: 80px; */
+    }
