@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+
+
+    <head>
+            <meta charset="UTF-8">
+            <title>Glasneaker - Login Page</title>
+            <link rel="icon" href="{% static 'images/Gicon.ico' %}" type="image/x-icon">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/login-page.css' %}"/>
+            <script type="text/javascript" src="{% static 'scripts/login.js' %}"></script>
+    </head>
+
+    <body>
+    <div id="login_frame">
+
+                <p id="image_logo"><img src="{% static 'images/logo.png' %}"></p>
+
+                 <div align="center" style="font-size: 25px"> YOUR ACCOUNT FOR <br/>EVERYTHING </div>
+                <form method="post" action="login.js">
+
+                 <p><label class="label_input">User Name:</label><input type="text" id="username" class="text_field"/></p>
+                    <p><label class="label_input">Password:</label><input type="text" id="password" class="text_field"/></p>
+
+                 <div id="login_control">
+                     <input type="button" id="btn_login" value="Login" onclick="login();"/>
+                    </div>
+
+                 <div>
+                     <a id="forget_pwd" href="forget_pwd.html" >Not a Member? &nbsp&nbsp&nbsp&nbsp Join us!</a>
+                 </div>   
+
+                
+                </form>
+    </div>
+
+</html>
