@@ -8,3 +8,5 @@ from django.shortcuts import redirect    # 页面跳转重定向
 def index(request):
     return render(request,"Glasneaker/index.html");
 
+def register(request):
+    return render(request, "Glasneaker/register.html");
