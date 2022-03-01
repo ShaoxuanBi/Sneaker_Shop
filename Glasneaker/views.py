@@ -3,10 +3,12 @@
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.shortcuts import redirect    # 页面跳转重定向
 
 def index(request):
     return render(request,"Glasneaker/index.html");
 
 def login(request):
     return render(request, "Glasneaker/login.html");
+
+def register(request):
+    return render(request, "Glasneaker/register.html");
