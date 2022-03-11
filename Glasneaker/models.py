@@ -30,7 +30,7 @@ class Product(models.Model):
     category = models.CharField(max_length=32)
     price = models.DecimalField(max_digits =16,decimal_places =2)
     quantity = models.CharField(max_length=16)
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE)      #seller name
+#   user_name = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)      #seller name
     size = models.CharField(max_length=16)
 
     class Meta:
