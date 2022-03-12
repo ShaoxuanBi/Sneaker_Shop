@@ -1,48 +1,52 @@
 from django.db import models
 
 class User(models.Model):
-    user_name = models.CharField(max_length=64, unique=True)
+    username = models.CharField(max_length=64, unique=True)
     password = models.CharField(max_length=64)
     email = models.CharField(max_length=64)
+    fisrtname = models.CharField(max_length=32)
+    lastname = models.CharField(max_length=32)
 
     class Meta:
         db_table="User"
 
     def __str__(self):
-        return self.user_name
+        return self.username
 
 class Administrator(models.Model):
-    user_name = models.CharField(max_length=64, unique=True)
+    username = models.CharField(max_length=64, unique=True)
     password = models.CharField(max_length=64)
     email = models.CharField(max_length=64)
+    fisrtname = models.CharField(max_length=32)
+    lastname = models.CharField(max_length=32)
 
     class Meta:
         db_table="Administrator"
 
     def __str__(self):
-        return self.user_name
+        return self.username
 
 class Product(models.Model):
-    product_ID = models.IntegerField(default=0, unique=True)
-    product_name = models.CharField(max_length=64)
+    productID = models.IntegerField(default=0, unique=True)
+    productname = models.CharField(max_length=64)
     description = models.TextField(blank=True)
     picture = models.ImageField(upload_to="static/image", blank=True)
     category = models.CharField(max_length=32)
     price = models.DecimalField(max_digits =16,decimal_places =2)
     quantity = models.CharField(max_length=16)
-#   user_name = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)      #seller name
+#   username = models.ForeignKey(User, on_delete=models.CASCADE, blank=True)      #seller name
     size = models.CharField(max_length=16)
 
     class Meta:
         db_table="Product"
 
     def __str__(self):
-        return self.product_name
+        return self.productname
 
 class Comment(models.Model):
-    comment_number = models.IntegerField(default=0, unique=True)
-    product_ID = models.ForeignKey(Product, on_delete=models.CASCADE)
-    user_name = models.CharField(max_length=64)       # the name of the person who left the message
+    commentnumber = models.IntegerField(default=0, unique=True)
+    productID = models.ForeignKey(Product, on_delete=models.CASCADE)
+    username = models.CharField(max_length=64)       # the name of the person who left the message
     content = models.TextField(blank=True)
     reply = models.TextField(blank=True)
     time = models.DateTimeField(auto_now_add=True)
@@ -51,35 +55,35 @@ class Comment(models.Model):
         db_table="Comment"
 
     def __str__(self):
-        return self.comment_number
+        return self.commentnumber
 
 class Basket(models.Model):
-    shoes_name = models.CharField(max_length=64)
-    shoes_colour = models.CharField(max_length=16)
-    shoes_quantity = models.IntegerField(default=1)
-    shoes_size = models.DecimalField(max_digits =3,decimal_places =1)
-    original_price = models.DecimalField(max_digits =16,decimal_places =2)
+    shoesname = models.CharField(max_length=64)
+    shoescolour = models.CharField(max_length=16)
+    shoesquantity = models.IntegerField(default=1)
+    shoessize = models.DecimalField(max_digits =3,decimal_places =1)
+    originalprice = models.DecimalField(max_digits =16,decimal_places =2)
     outlet = models.DecimalField(max_digits =16,decimal_places =2)
-    total_price = models.DecimalField(max_digits =16,decimal_places =2)
+    totalprice = models.DecimalField(max_digits =16,decimal_places =2)
     delivery = models.CharField(max_length=128)
 
     class Meta:
         db_table="Basket"
 
     def __str__(self):
-        return self.shoes_name
+        return self.shoesname
 
 class Order(models.Model):
-    order_ID = models.IntegerField(default=0, unique=True)
-    first_name = models.CharField(max_length=64)
-    last_name = models.CharField(max_length=64)
+    orderID = models.IntegerField(default=0, unique=True)
+    firstname = models.CharField(max_length=64)
+    lastname = models.CharField(max_length=64)
     email = models.CharField(max_length=64)
-    find_address = models.CharField(max_length=512)
-    phone_number = models.CharField(max_length=16)
-    delivery_options = models.CharField(max_length=16)
-    card_number = models.IntegerField(default=0)
-    expiration_date = models.IntegerField(default=0)
-    security_code = models.IntegerField(default=0)
+    findaddress = models.CharField(max_length=512)
+    phonenumber = models.CharField(max_length=16)
+    deliveryoptions = models.CharField(max_length=16)
+    cardnumber = models.IntegerField(default=0)
+    expirationdate = models.IntegerField(default=0)
+    securitycode = models.IntegerField(default=0)
     paypal = models.URLField()
     klarna = models.URLField()
     
@@ -87,6 +91,14 @@ class Order(models.Model):
         db_table="Order"
 
     def __str__(self):
-        return self.order_ID
+        return self.orderID
 
+class Promotion(models.Model):
+    promotionID = models.CharField(max_length=64, unique=True)
+    promotioncode = models.CharField(max_length=64)
 
+    class Meta:
+        db_table="Promotion"
+
+    def __str__(self):
+        return self.promotionID
