@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>   <!-- 网站标题，CSS模版，以及icon图标：-->
+      <title>AIR JORDANS</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/public.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/subindex.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+      <link rel="icon" href="{% static 'images/Gicon.ico' %}" type="image/x-icon">
+      <script type="text/javascript" src="{% static 'scripts/index.js' %}"></script>
+</head>
+
+
+<body>
+  <!-- 固定导航模版：-->
+  <header id="header">
+    <div class="contWitch">
+      <a href="#nogo" class="logo"><img style=" height: 50px; width: 200px; position: absolute; left: -100px; top: 5px" src="{% static 'images/logo.jpeg' %}" alt="my Shop"></a>
+
+      <div class="search">
+        <input type="text" name="" id="my" class="" value="Search here..." style="height: 25px; width: 700px; position: absolute; left: 180px; top: 15px">
+        <img style="width: 25px; position: absolute; left: 860px; top: 20px" src="{% static 'images/zoom.gif' %}" />
+          <a href="login.jsp" class="login" style="font-size:16px;color:#000000; position: absolute; left: 1000px; top: 22px">Login</a>
+          <a href="register.jsp" class="register2" style="font-size:16px; position: absolute;color:#000000; left: 1050px; top: 22px"> Register  </a>
+          <a href="shopcar.jsp" class="shopcar" style="font-size:16px; position: absolute;color:#000000; left: 1175px; top: 22px"> Basket  </a>
+          <img style="height: 40px; width: 30px; position: absolute; left: 1140px; top: 10px" src="{% static 'images/shopcar.jpeg' %}" />
+      </div>
+
+      <div class="mainNav">
+        <ul class="nav">
+          <li><a href="aj.html">AIR JORDANS</a>
+            <div class="subItem"></div></li>
+
+          <li><a href="yeezy.html">YEEZY</a>
+            <div class="subItem"></div></li>
+
+          <li><a href="nike.html">NIKE</a>
+            <div class="subNav">
+              <div class="subItem"></div>
+            </div></li>
+
+          <li><a href="adidas.html">ADIDAS</a>
+            <div class="subNav">
+              <div class="subItem"></div>
+            </div></li>
+
+          <li><a href="secondary.html">SECONDARY MARKET</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="lastNav">
+      <a href="#nogo" class="logo1"><img src="{% static 'images/logo.jpeg' %}"></a>
+      </div>
+
+  </header>
+
+<div  style="font-size: 38px;position: absolute; left: 600px; top: 150px">AIR JORDANS</div>
+   <div id="jnBrandList">
+   <li><a href="goods1.html" style="position: absolute; left: 80px; top: 220px" >
+                <figure>
+                  <img src="{% static 'images/11.jpg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan1 Retro Sp<br> "Court Purple"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">1100$</div>
+            </a></li>
+
+    <li><a href="goods1.html" style="position: absolute; left: 400px; top: 220px" >
+                <figure>
+                  <img src="{% static 'images/10.jpg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan1 Retri Sp<br> "TUROBO GREEN"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">565+$</div>
+            </a></li>
+
+    <li><a href="goods1.html" style="position: absolute; left: 730px; top: 220px" >
+                <figure>
+                  <img src="{% static 'images/08.jpg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan1 Retro High Og<br> "CRIMSON"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">290$</div>
+            </a></li>
+
+    <li><a href="goods1.html" style="position: absolute; left: 1040px; top: 220px" >
+                <figure>
+                  <img src="{% static 'images/aj04.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan1 Retro Sp<br> "Black Toe"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">450.00+$</div>
+            </a></li>
+    </div>
+
+    <div id="jnBrandList">
+     <li><a href="###" style="position: absolute; left: 80px; top: 550px" >
+                <figure>
+                  <img src="{% static 'images/aj03.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                   AIR JORDAN<br> Air Jordan1 High Og<br> "Travis Scott"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">920.00+$</div>
+            </a></li>
+
+    <li><a href="####" style="position: absolute; left: 400px; top: 550px" >
+                <figure>
+                  <img src="{% static 'images/aj01.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan6 Retro Sp<br> "Travis Scott"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">870.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 730px; top: 550px" >
+                <figure>
+                  <img src="{% static 'images/aj08.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan1  X<br> Off-white Unc
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">1200.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 1040px; top: 550px" >
+                <figure>
+                  <img src="{% static 'images/aj02.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                     AIR JORDAN<br> Air Jordan1 Retri Sp<br> "Kawhi Leonard"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">1745.00+$</div>
+            </a></li>
+    </div>
+
+    <div id="jnBrandList">
+     <li><a href="###" style="position: absolute; left: 80px; top: 870px" >
+                <figure>
+                  <img src="{% static 'images/aj10.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                     AIR JORDAN<br> Air Jordan11 Retro Sp<br> "Blue"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">320.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 400px; top: 870px" >
+                <figure>
+                  <img src="{% static 'images/aj11.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordanq11 Retro Sp<br> "Gamma Blue"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">420.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 730px; top: 870px" >
+                <figure>
+                  <img src="{% static 'images/aj06.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan6 Retro Sp<br> "Cool"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">420.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 1040px; top: 870px" >
+                <figure>
+                  <img src="{% static 'images/aj12.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                     AIR JORDAN<br> Air Jordan1 Retro Sp<br> "Shadow"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">315.00+$</div>
+            </a></li>
+    </div>
+
+    <div id="jnBrandList">
+     <li><a href="###" style="position: absolute; left: 80px; top: 1190px" >
+                <figure>
+                  <img src="{% static 'images/aj13.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan1 Retro Sp<br> "Braons"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">550.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 400px; top: 1190px" >
+                <figure>
+                  <img src="{% static 'images/aj14.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                   AIR JORDAN<br> Air Jordan4 Retro Sp<br> "Green Glow"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">330.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 730px; top: 1190px" >
+                <figure>
+                  <img src="{% static 'images/aj15.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan11 Retro Sp<br> "Bred"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">460.00+$</div>
+            </a></li>
+
+    <li><a href="###" style="position: absolute; left: 1040px; top: 1190px" >
+                <figure>
+                  <img src="{% static 'images/aj16.jpeg' %}">
+                  <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+                    AIR JORDAN<br> Air Jordan4 Retro Sp<br> "2016 Release"
+                  </figcaption>
+                </figure>
+                <div align="center" style="font-size: 15px;margin-top: 5px;">400.00+$</div>
+            </a></li>
+    </div>
+
+    <div class="category-description std" style=" font-size:20px;border:1px #888888   solid;position: absolute; color:#808080;left: 20px; top: 1590px">
+        Since 1985, the sneakers with Michael Jordan’s name and world-renowned “Jumpman” silhouette have helped define and shape sneaker culture. It began with a standard <a href=https://www.flightclub.com/nike/nike-dunks/dunk-high>Nike high-top</a> and evolved with daring designs with each iteration. From <a href=https://www.flightclub.com/air-jordans/air-jordan-3>graphic prints</a> to <a href=https://www.flightclub.com/air-jordans/air-jordan-11>patent leather</a> to <a href=https://www.flightclub.com/air-jordans/air-jordan-5>fighter planes</a> and <a href=https://www.flightclub.com/air-jordans/air-jordan-14>Ferrari-inspired designs</a>, Jordan sneakers routinely transcend their basketball roots by refreshing their initial offering with new looks and color schemes to remain relevant to each new generation. Here is our sotres: <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a><img src="{% static 'images/glasgow2.png' %}"></a><a><img src="{% static 'images/address3.jpeg' %}"></a><a><img src="{% static 'images/address1.jpeg' %}"></a><a><img src="{% static 'images/glasgow3.jpg' %}"></a> </div>
+
+
+<!-- 固定Java script的动态内容：-->
+  </section>
+  <script type="text/javascript" src="{% static 'scripts/subindex.js' %}"></script>
+  <script type="text/javascript" src="{% static 'scripts/jquery-1.js' %}"></script>
+  <script  id="js" src="{% static 'scripts/canvas-nest.min.js' %}" type="text/javascript"></script>
+  <script type="text/javascript">
+    /*  $(function(){
+                 alert(1);
+
+      })
+     */
+  </script>
+
+
+</body>
+
+
+</html>
