@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>   <!-- 网站标题，CSS模版，以及icon图标：-->
+      <title>AIR JORDAN</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/republic-of-detail.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/proList.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/ext.css' %}">
+      <link rel="icon" href="{% static 'images/Gicon.ico' %}" type="image/x-icon">
+      <script type="text/javascript" src="{% static 'scripts/detail.js' %}"></script>
+</head>
+
+
+<body>
+  <!-- 固定导航模版：-->
+  <header id="header">
+    <div class="contWitch">
+      <a href="#nogo" class="logo"><img style=" height: 50px; width: 200px; position: absolute; left: -100px; top: 5px" src="{% static 'images/logo.jpeg' %}" alt="my Shop"></a>
+
+      <div class="search">
+        <input type="text" name="" id="my" class="" value="Search here..." style="height: 25px; width: 700px; position: absolute; left: 180px; top: 15px">
+        <img style="width: 25px; position: absolute; left: 860px; top: 20px" src="{% static 'images/zoom.gif' %}" />
+          <a href="login.jsp" class="login" style="font-size:16px;color:#000000; position: absolute; left: 1000px; top: 22px">Login</a>
+          <a href="register.jsp" class="register2" style="font-size:16px; position: absolute;color:#000000; left: 1050px; top: 22px"> Register  </a>
+          <a href="shopcar.jsp" class="shopcar" style="font-size:16px; position: absolute;color:#000000; left: 1175px; top: 22px"> Basket  </a>
+          <img style="height: 40px; width: 30px; position: absolute; left: 1140px; top: 10px" src="{% static 'images/shopcar.jpeg' %}" />
+      </div>
+
+      <div class="mainNav">
+        <ul class="nav">
+          <li><a href="aj.html">AIR JORDANS</a>
+            <div class="subItem"></div></li>
+
+          <li><a href="yeezy.html">YEEZY</a>
+            <div class="subItem"></div></li>
+
+          <li><a href="nike.html">NIKE</a>
+            <div class="subNav">
+              <div class="subItem"></div>
+            </div></li>
+
+          <li><a href="adidas.html">ADIDAS</a>
+            <div class="subNav">
+              <div class="subItem"></div>
+            </div></li>
+
+          <li><a href="secondary.html">SECONDARY MARKET</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="lastNav">
+      <a href="#nogo" class="logo1"><img src="{% static 'images/logo.jpeg' %}"></a>
+      </div>
+
+  </header>
+
+<div class="order cart mt">
+			<!-----------------site------------------->
+			<div class="site">
+				<p class="wrapper clearfix">
+					<span class="fl">Order confirmation</span>
+					<img class="top" src="{% static 'images/toptop02.png' %}">
+				</p>
+			</div>
+			<!-----------------orderCon------------------->
+			<div class="orderCon wrapper clearfix">
+				<div class="orderL fl">
+					<!--------h3---------------->
+					<h3>Recipient information</h3>
+					<!--------addres---------------->
+					<div class="addres clearfix">
+						<div class="addre fl on">
+							<div class="tit clearfix">
+								<p class="fl">Name: <input type="text"/> (input here)
+								</p>
+							</div>
+							<div class="addCon">
+								<p class="fl">Address: <input type="text"/></p>
+								<p class="fl">Tel: <input type="text"/></p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="orderR fr">
+					<div class="msg">
+						<h3>Order details<a href="cart2.html" class="fr">Back to the shopping cart</a></h3>
+						<!--------ul---------------->
+						<ul class="clearfix">
+							<li class="fl">
+								<img src="{% static 'images/07.jpg' %}">
+							</li>
+							<li class="fl">
+								<p>AIR JORDAN 1 MID "GYM RED"</p>
+								<p>Size:38</p>
+								<p>Number：1</p>
+							</li>
+							<li class="fr">$425</li>
+						</ul>
+						<ul class="clearfix">
+							<li class="fl">
+								<img src="{% static 'images/08.jpg' %}">
+							</li>
+							<li class="fl">
+								<p>AIR JORDAN 1 RETRO HIGH OG "CRIMSON TINT"</p>
+								<p>Size：38</p>
+								<p>Number：1</p>
+							</li>
+							<li class="fr">$290</li>
+						</ul>
+					</div>
+					<!--------tips---------------->
+					<div class="tips">
+						<p><span class="fl">Goods：</span><span class="fr">$715</span></p>
+						<p><span class="fl">Carriage：</span><span class="fr">$12</span></p>
+					</div>
+					<!--------tips count---------------->
+					<div class="count tips">
+						<p><span class="fl">Total：</span><span class="fr">$727</span></p>
+					</div>
+					<!--<input type="button" name="" value="去支付"> -->
+					<a href="finished" class="pay">Pay now</a>
+				</div>
+			</div>
+		</div>
+
+<!-- 固定Java script的动态内容：-->
+  </section>
+  <script type="text/javascript" src="{% static 'scripts/subindex.js' %}"></script>
+  <script type="text/javascript" src="{% static 'scripts/jquery-1.js' %}"></script>
+  <script  id="js" src="{% static 'scripts/canvas-nest.min.js' %}" type="text/javascript"></script>
+  <script type="text/javascript">
+    /*  $(function(){
+                 alert(1);
+
+      })
+     */
+  </script>
+
+
+</body>
+
+
+</html>

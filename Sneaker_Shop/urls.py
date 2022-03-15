@@ -9,4 +9,8 @@ urlpatterns = [
     path('register/', include("Glasneaker.urls")),
     path('airjordan/', include("Glasneaker.urls")),
     path('yeezy/', include("Glasneaker.urls")),
+    path('detail/', include("Glasneaker.urls")),
+    path('order/', include("Glasneaker.urls")),
+    path('finished/', include("Glasneaker.urls")),
+    path('cart/', include("Glasneaker.urls")),
 ]

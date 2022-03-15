@@ -139,19 +139,32 @@
 	line-height: 30px;
 	text-align: center;
 }
-#jnDetails .pro_size select{
+#jnDetails .pro_size button{
 	float: left;
 	margin-top:10px;
-	margin-left: 10px;
-	display: block;
-	width: 50px;
-	height: 50px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #BBB;
+	color: black;
+	background: white;
 	margin-right: 10px;
-	font-size:20px;
+	font-size:18px;
 	line-height: 30px;
 	text-align: center;
 }
+#jnDetails .pro_size button:active{
 
+	color: white;
+	background: #000000;
+	opacity: 0.5;
+}
+#jnDetails .pro_size button:focus{
+
+	color: black;
+	background: grey;
+	opacity: 0.5;
+
+}
 #jnDetails .pro_size span{
 	margin-top: 20px;
 	margin-bottom: 0;
@@ -193,8 +206,8 @@
 #jnDetails .pro_count select{
 	margin-top: -110px;
     display: block;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	margin-left: 140px;
 	font-size:20px;
 	line-height: 30px;
@@ -213,11 +226,11 @@
 	clear: both;
 	margin-top: 20px;
 }
-  #jnDetails #cart input{
-	width:300px;
+  #jnDetails #cart img{
+	width:250px;
 	height:60px;
-	margin-top: 80px;
-	margin-left: 100px;
+	margin-top: 20px;
+	margin-left: 20px;
 }
 #jnDetails #scar a{
 	font: 14px courier new,courier,monospace;/* 字体设置 */

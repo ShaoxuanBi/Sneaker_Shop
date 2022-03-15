@@ -18,3 +18,15 @@ def airjordan(request):
 
 def yeezy(request):
     return render(request, "Glasneaker/yeezy.html")
+
+def detail(request):
+    return render(request, "Glasneaker/detail.html")
+
+def order(request):
+    return render(request, "Glasneaker/order.html")
+
+def finished(request):
+    return render(request, "Glasneaker/finished.html")
+
+def cart(request):
+    return render(request, "Glasneaker/cart.html")
