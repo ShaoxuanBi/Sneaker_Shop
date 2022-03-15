@@ -13,4 +13,12 @@ urlpatterns = [
     path('order/',views.order, name='order'),
     path('finished/',views.finished, name='finished'),
     path('cart/',views.cart, name='cart'),
+
+    path('logout/',views.logout, name='logout'),
+    path('shopcar.jsp/',views.basket, name='basket'),
+    path('index/product/',views.product, name='product'),
+    path('index/basket/',views.basket, name='basket'),
+    path('index/basket/',views.basket_add, name='basket_add'),
+    path('index/basket/',views.basket_remove, name='basket_remove'),
+
 ]
