@@ -1,0 +1,97 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+  <!-- 网站标题，CSS模版，以及icon图标：-->
+  <title>
+    {% block title_block %}
+
+    {% endblock %}
+  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/republic-of-detail.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+  <link rel="icon" href="{% static 'images/Gicon.ico' %}" type="image/x-icon">
+</head>
+
+
+<body>
+  <!-- 固定导航模版：-->
+  <header id="header">
+    <div class="contWitch">
+      <a href="#nogo" class="logo"><img style=" height: 50px; width: 200px; position: absolute; left: -100px; top: 5px"
+          src="{% static 'images/logo.jpeg' %}" alt="my Shop"></a>
+
+      <div class="search">
+        <input type="text" name="" id="my" class="" value="Search here..."
+          style="height: 25px; width: 700px; position: absolute; left: 180px; top: 15px">
+        <img style="width: 25px; position: absolute; left: 860px; top: 20px" src="{% static 'images/zoom.gif' %}" />
+        <a href="{% url 'login' %}" class="login"
+          style="font-size:16px;color:#000000; position: absolute; left: 1000px; top: 22px">Login</a>
+        <a href="{% url 'register' %}" class="register2"
+          style="font-size:16px; position: absolute;color:#000000; left: 1050px; top: 22px"> Register </a>
+        <a href="{% url 'cart' %}" class="shopcar"
+          style="font-size:16px; position: absolute;color:#000000; left: 1175px; top: 22px"> Basket </a>
+        <img style="height: 40px; width: 30px; position: absolute; left: 1140px; top: 10px"
+          src="{% static 'images/shopcar.jpeg' %}" />
+      </div>
+
+      <div class="mainNav">
+        <ul class="nav">
+          <li><a href="{% url 'airjordan' %}">AIR JORDANS</a>
+            <div class="subItem"></div>
+          </li>
+
+          <li><a href="{% url 'yeezy' %}">YEEZY</a>
+            <div class="subItem"></div>
+          </li>
+
+          <li><a href="{% url 'nike' %}">NIKE</a>
+            <div class="subNav">
+              <div class="subItem"></div>
+            </div>
+          </li>
+
+          <li><a href="{% url 'adidas' %}">ADIDAS</a>
+            <div class="subNav">
+              <div class="subItem"></div>
+            </div>
+          </li>
+
+          <li><a href="##">SECONDARY MARKET</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="lastNav">
+      <a href="#nogo" class="logo1"><img src="{% static 'images/logo.jpeg' %}"></a>
+    </div>
+
+  </header>
+
+  <div>
+    {% block body_block %}
+    {% endblock %}
+  </div>
+
+  <!-- 固定Java script的动态内容：-->
+  </section>
+  <script type="text/javascript" src="{% static 'scripts/subindex.js' %}"></script>
+  <script type="text/javascript" src="{% static 'scripts/jquery-1.js' %}"></script>
+  <script id="js" src="{% static 'scripts/canvas-nest.min.js' %}" type="text/javascript"></script>
+  <script type="text/javascript">
+    /*  $(function(){
+                 alert(1);
+
+      })
+     */
+  </script>
+  <script type="text/javascript" src="{% static 'scripts/detail.js' %}"></script>
+</body>
+
+</html>

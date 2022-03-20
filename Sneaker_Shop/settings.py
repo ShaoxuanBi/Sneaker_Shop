@@ -62,6 +62,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',  # media files
+
             ],
         },
     },
@@ -80,6 +82,9 @@ DATABASES = {
     }
 }
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'login/'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -90,6 +95,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        # The password should have at least 8 characters.
+        'OPTIONS': {'min_length': 8, }
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -98,7 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -121,8 +127,10 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,
-    ("css", os.path.join(STATIC_DIR, 'css')),
-    ("js", os.path.join(STATIC_DIR, 'js')),
-    ]
+                    ("css", os.path.join(STATIC_DIR, 'css')),
+                    ("js", os.path.join(STATIC_DIR, 'js')),
+                    ]
 
-
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
