@@ -8,72 +8,63 @@ Order page
 
 {% block body_block %}
 <div class="order cart mt">
-			<!-----------------site------------------->
-			<div class="site">
-				<p class="wrapper clearfix">
-					<span class="fl">Order confirmation</span>
-					<img class="top" src="{% static 'images/toptop02.png' %}">
-				</p>
-			</div>
-			<!-----------------orderCon------------------->
-			<div class="orderCon wrapper clearfix">
-				<div class="orderL fl">
-					<!--------h3---------------->
-					<h3>Recipient information</h3>
-					<!--------addres---------------->
-					<div class="addres clearfix">
-						<div class="addre fl on">
-							<div class="tit clearfix">
-								<p class="fl">Name: <input type="text"/> (input here)
-								</p>
-							</div>
-							<div class="addCon">
-								<p class="fl">Address: <input type="text"/></p>
-								<p class="fl">Tel: <input type="text"/></p>
-							</div>
-						</div>
+	<!-----------------site------------------->
+	<div class="site">
+		<p class="wrapper clearfix">
+			<span class="fl">Order confirmation</span>
+			<img class="top" src="{% static 'images/toptop02.png' %}">
+		</p>
+	</div>
+	<!-----------------orderCon------------------->
+	<div class="orderCon wrapper clearfix">
+		<div class="orderL fl">
+			<!--------h3---------------->
+			<h3>Recipient information</h3>
+			<!--------addres---------------->
+			<div class="addres clearfix">
+				<div class="addre fl on">
+					<div class="tit clearfix">
+						<p class="fl">Name: <input type="text" /> (input here)
+						</p>
 					</div>
+					<div class="addCon">
+						<p class="fl">Address: <input type="text" /></p>
+						<p class="fl">Tel: <input type="text" /></p>
+					</div>
+				</div>
+			</div>
 
-				</div>
-				<div class="orderR fr">
-					<div class="msg">
-						<h3>Order details<a href="{% url 'cart' %}" class="fr">Back to the shopping cart</a></h3>
-						<!--------ul---------------->
-						<ul class="clearfix">
-							<li class="fl">
-								<img src="{% static 'images/07.jpg' %}">
-							</li>
-							<li class="fl">
-								<p>AIR JORDAN 1 MID "GYM RED"</p>
-								<p>Size:38</p>
-								<p>Number：1</p>
-							</li>
-							<li class="fr">$425</li>
-						</ul>
-						<ul class="clearfix">
-							<li class="fl">
-								<img src="{% static 'images/08.jpg' %}">
-							</li>
-							<li class="fl">
-								<p>AIR JORDAN 1 RETRO HIGH OG "CRIMSON TINT"</p>
-								<p>Size：38</p>
-								<p>Number：1</p>
-							</li>
-							<li class="fr">$290</li>
-						</ul>
-					</div>
-					<!--------tips---------------->
-					<div class="tips">
-						<p><span class="fl">Goods：</span><span class="fr">$715</span></p>
-						<p><span class="fl">Carriage：</span><span class="fr">$12</span></p>
-					</div>
-					<!--------tips count---------------->
-					<div class="count tips">
-						<p><span class="fl">Total：</span><span class="fr">$727</span></p>
-					</div>
-					<!--<input type="button" name="" value="去支付"> -->
-					<a href="{% url 'finished' %}" class="pay">Pay now</a>
-				</div>
-			</div>
 		</div>
+		<div class="orderR fr">
+			<div class="msg">
+				<h3>Order details<a href="{% url 'cart' %}" class="fr">Back to the shopping cart</a></h3>
+				<!--------ul---------------->
+				{% for item in request.session.cart%}
+				<ul class="clearfix">
+					<li class="fl">
+						{{item.picture|safe}}
+					</li>
+					<li class="fl">
+						<p>{{item.name}}</p>
+						<p>Size:{{size}}</p>
+						<p>Number：{{number}}</p>
+					</li>
+					<li class="fr">${{item.prices}}</li>
+				</ul>
+				{% endfor %}
+			</div>
+			<!--------tips---------------->
+			<div class="tips">
+				<p><span class="fl">Goods：</span><span class="fr">${{request.session.totalprice}}</span></p>
+				<p><span class="fl">Carriage：</span><span class="fr">$0</span></p>
+			</div>
+			<!--------tips count---------------->
+			<div class="count tips">
+				<p><span class="fl">Total：</span><span class="fr">${{request.session.totalprice}}</span></p>
+			</div>
+			<!--<input type="button" name="" value="去支付"> -->
+			<a href="{% url 'finished' %}" class="pay">Pay now</a>
+		</div>
+	</div>
+</div>
 {% endblock %}

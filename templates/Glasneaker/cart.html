@@ -6,66 +6,70 @@ Shop cart
 {% endblock %}
 
 {% block body_block %}
-<div id = "content">
-        <div class="cart mt">
-     
-      <div class="site">
-        <p class=" wrapper clearfix">
-          <span class="fl">Shopping cart</span>
-          <img class="top" src="{% static 'images/toptop01.png' %}">
-          <a href="{% url 'index' %}" class="fr">Continue</a>
-        </p>
+<div id="content">
+  <div class="cart mt">
+
+    <div class="site">
+      <p class=" wrapper clearfix">
+        <span class="fl">Shopping cart</span>
+        <img class="top" src="{% static 'images/toptop01.png' %}">
+        <a href="{% url 'index' %}" class="fr">Continue</a>
+      </p>
+    </div>
+    <!-----------------table------------------->
+
+    <div class="table wrapper">
+      <div class="tr">
+        <div>good</div>
+        <div>price for one</div>
+        <div>number</div>
+        <div>subtotal</div>
+        <div>operation</div>
       </div>
-      <!-----------------table------------------->
-      <div class="table wrapper">
-        <div class="tr">
-          <div>good</div>
-          <div>price for one</div>
-          <div>number</div>
-          <div>subtotal</div>
-          <div>operation</div>
+      {% for item in request.session.cart%}
+      <div class="th">
+
+        <div class="pro clearfix">
+
+          <a class="fl" href="#">
+            <dl class="clearfix">
+              <dt class="fl">{{item.picture | safe}}</dt>
+              <dd class="fl">
+                <p>{{item.name}}</p>
+                <p>Size:</p>
+                <p>{{item.size}}</p>
+              </dd>
+            </dl>
+          </a>
         </div>
 
-        <div class="th">
-          <div class="pro clearfix">
-
-            <a class="fl" href="#">
-              <dl class="clearfix">
-                <dt class="fl"><img src="{% static 'images/07.jpg' %}" ></dt>
-                <dd class="fl">
-                  <p>AIR JORDAN 1 MID "GYM RED"</p>
-                  <p>Size:</p>
-                  <p>38</p>
-                </dd>
-              </dl>
-            </a>
-          </div>
-
-          <div class="price">
-            <san>$425</san>
-          </div>
-
-          <div class="number">
-            <p class="num clearfix">
-            </p>
-          </div>
-
-          <div class="price sAll">
-            <san>$425</san>
-          </div>
-
-          <div class="price"><a class="del" href="#2">Delete</a></div>
+        <div class="price">
+          <san>${{item.price}}</san>
         </div>
 
-        <div class="goOn">Nothing in it~<a href="{% url 'index' %}">Buy something now!!</a></div>
-        <div class="tr clearfix">
-
-          <p class="fr">
-            <span>Sum:&nbsp;<small id="all">$ 0.00</small></span>
-            <a href="{% url 'order' %}" class="count">Check out</a>
+        <div class="number">
+          <p class="num clearfix">
+            {{item.number}}
           </p>
         </div>
+
+        <div class="price sAll">
+          <san>${{item.prices}}</san>
+        </div>
+
+        <div class="price"><a class="del" href="#2">Delete</a></div>
+      </div>
+      {% endfor %}
+
+      <div class="goOn">Nothing in it~<a href="{% url 'index' %}">Buy something now!!</a></div>
+      <div class="tr clearfix">
+
+        <p class="fr">
+          <span>Sum:&nbsp;<small id="all">$ {{request.session.totalprice}}</small></span>
+          <a href="{% url 'order' %}" class="count">Check out</a>
+        </p>
       </div>
     </div>
+  </div>
 </div>
 {% endblock %}

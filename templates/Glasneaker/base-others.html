@@ -25,12 +25,18 @@
       <a href="#nogo" class="logo"><img style=" height: 50px; width: 200px; position: absolute; left: -100px; top: 5px" src="{% static 'images/logo.jpeg' %}" alt="my Shop"></a>
 
       <div class="search">
-        <input type="text" name="" id="my" class="" value="Search here..." style="height: 25px; width: 700px; position: absolute; left: 180px; top: 15px">
+        <input type="text" name="" id="my" class="" value="Search here..."
+          style="height: 25px; width: 700px; position: absolute; left: 180px; top: 15px">
         <img style="width: 25px; position: absolute; left: 860px; top: 20px" src="{% static 'images/zoom.gif' %}" />
-          <a href="{% url 'login' %}" class="login" style="font-size:16px;color:#000000; position: absolute; left: 1000px; top: 22px">Login</a>
-          <a href="{% url 'register' %}" class="register2" style="font-size:16px; position: absolute;color:#000000; left: 1050px; top: 22px"> Register  </a>
-          <a href="{% url 'cart' %}" class="shopcar" style="font-size:16px; position: absolute;color:#000000; left: 1175px; top: 22px"> Basket  </a>
-          <img style="height: 40px; width: 30px; position: absolute; left: 1140px; top: 10px" src="{% static 'images/shopcar.jpeg' %}" />
+        {% if request.session.user_name %}
+        <a style="font-size:16px;color:#000000; position: absolute; left: 900px; top: 22px">当前用户{{request.session.user_name}}</a>
+        <img style="height: 40px; width: 30px; position: absolute; left: 1020px; top: 10px" src="{% static 'images/shopcar.jpeg' %}" />
+        <a href="{% url 'cart' %}" class="shopcar" style="font-size:16px; position: absolute;color:#000000; left: 1060px; top: 22px"> Basket  </a>
+        <a href="{% url 'logout' %}" class="logout" style="font-size:16px;color:#000000; position: absolute; left: 1120px; top: 22px">Logout</a>
+        {% else %}
+        <a href="{% url 'login' %}" class="login" style="font-size:16px;color:#000000; position: absolute; left: 950px; top: 22px">Login</a>
+        <a href="{% url 'register' %}" class="register2" style="font-size:16px; position: absolute;color:#000000; left: 1050px; top: 22px"> Register  </a>
+        {% endif %}
       </div>
 
       <div class="mainNav">

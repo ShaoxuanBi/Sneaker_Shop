@@ -1,57 +1,66 @@
 {% extends 'Glasneaker/base-product.html' %}
 {% load staticfiles %}
-
-{% block title_block %}
-Shoe details
-{% endblock %}
-
+{% block title_block %} Shoe details {% endblock %}
 {% block body_block %}
+<style>
+    .cart img {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .cart input {
+        line-height: 50px;
+        font-size: 18px;
+    }
+</style>
 <section>
-       <div class="JaneShop">
-           <!-- 细节图 -->
-           <div id="jnProitem">
-               <div class="jdzoomWrap">
-                         <div >
-                             <a href="{% static 'images/aj03.jpg' %}" class="jqroom"><img src="{% static 'images/aj03.jpg' %}" ></a>
-                         </div>
-                     </a>
-               </div>
-               <span>
-                     <a href="{% static 'images/aj03.jpg' %}">
-                         <img src="{% static 'images/search.png' %}">
-                    </a>
-               </span>
-           </div>
+    <div class="JaneShop">
+        <!-- 细节图 -->
+        <div id="jnProitem">
+            <div class="jdzoomWrap">
+                <div>
+                    {{picture | safe}}
+                </div>
+            </div>
+        </div>
 
-           <!--  细节介绍 -->
-           <div id="jnDetails">
-               <h4 id="name">AIR JORDAN</h4>
+        <!--  细节介绍 -->
+        <div id="jnDetails">
+            <form method="post" action="/cart/">
+                {% csrf_token %}
+                <input type="hidden" name="id" id="id" value={{id}}> <input>
+                <h4 id="name">{{brand}}</h4>
+                <ul class="jnProDetailList">
+                    <li>{{name}}</li>
 
-               <ul class="jnProDetailList">
-                   <lii>AIR JORDAN 1 RETRO HIGH OG "BLACK TOE 2016 RELEASE"</lii>
+                    <li class="tbDetailPrice">
+                        <span>Price：</span><strong class="del">{{price}}</strong>$
+                    </li>
 
-                   <liii class="tbDetailPrice">
-                        <span>Price：</span><strong class="del">225.00+</strong>$
-                   </liii>
-
-                   <li class="pro_size">
-                         <span>Size：</span><strong >Choose please</strong>
-                         <ul>
-                              <button>38</button>
-                              <button>39</button>
-                              <button>40</button>
-                              <button>41</button>
-                              <button>42</button>
-                              <button>43</button>
-                         </ul>
-                   </li>
-                    <liv class="pro_stock">
-                       <span>Stock:</span><strong>50</strong>
-                   </liv>
+                    <li class="pro_size">
+                        <span>Size：</span><strong>Choose please</strong>
+                        <ul>
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="38" checked="checked">38
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="39">39
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="40">40
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="41">41
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="42">42
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                class="custom-control-input" value="43">43
+                        </ul>
+                    </li>
+                    <liv class="pro_stock"> <span>Stock:</span><strong>{{quantity}}</strong> </liv>
 
                     <lv class="pro_count">
                         <span>Number：</span><strong>(Each person can buy ten pairs at most)</strong>
-                        <select>
+                        <select id="number" name="number">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -63,41 +72,49 @@ Shoe details
                             <option value="9">9</option>
                             <option value="10">10</option>
                         </select>
-                   </lv>
-               </ul>
+                    </lv>
+                </ul>
 
-               <div id="cart">
-                   <a href="{% url 'cart' %}"><img src="{% static 'images/mycart.png' %}" alt="add to my cart" ></a>
-               </div>
+                <div class="cart">
+                    <img src="{% static 'images/shopcar.jpeg' %}" />
+                    <input type="submit" value="add to my cart" />
+                </div>
+            </form>
+        </div>
+    </div>
 
-           </div>
-      </div>
+    <a href="###" style="
+      font-size: 18px;
+      color: #000000;
+      position: absolute;
+      left: 160px;
+      top: 700px;
+    ">Recommend For You:</a>
 
-      <a href="###" style="font-size:18px;color:#000000; position: absolute; left: 160px; top: 700px">Recommend For You:</a>
-
-      <div>
-            <a href="##"><img style=" position: absolute; left: 150px; top: 740px" src="{% static 'images/08.jpg' %}">
-                <a href="#" style="position: absolute; left: 200px; top: 980px;font-size: 15px">Air Jordan 1 Retro High </a>
-                <a href="#" style="position: absolute; left: 250px; top: 1020px;font-size: 15px">225.00+$</a>
+    <div>
+        <a href="##"><img style="position: absolute; left: 150px; top: 740px" src="{% static 'images/07.jpg' %}" />
+            <a href="#" style="position: absolute; left: 200px; top: 980px; font-size: 15px">Air Jordan 1 Retro High
             </a>
+            <a href="#" style="position: absolute; left: 250px; top: 1020px; font-size: 15px">225.00+$</a>
+        </a>
 
-            <a href="##"><img style=" position: absolute; left: 470px; top: 740px" src="{% static 'images/11.jpg' %}">
-                <a href="#" style="position: absolute; left: 520px; top: 980px;font-size: 15px">Air Jordan 1 High OG</a>
-                <a href="#" style="position: absolute; left: 570px; top: 1020px;font-size: 15px">300.00+$</a>
-            </a>
+        <a href="##"><img style="position: absolute; left: 470px; top: 740px" src="{% static 'images/14.jpeg' %}" />
+            <a href="#" style="position: absolute; left: 520px; top: 980px; font-size: 15px">Air Jordan 1 High OG</a>
+            <a href="#" style="position: absolute; left: 570px; top: 1020px; font-size: 15px">1100.00+$</a>
+        </a>
 
-            <a href="##"><img style=" position: absolute; left: 790px; top: 740px" src="{% static 'images/10.jpg' %}">
-                <a href="#" style="position: absolute; left: 840px; top: 980px;font-size: 15px">Air Jordan 1 High OG</a>
-                <a href="#" style="position: absolute; left: 890px; top: 1020px;font-size: 15px">565.00+$</a>
-            </a>
+        <a href="##"><img style="position: absolute; left: 790px; top: 740px" src="{% static 'images/19.jpeg' %}" />
+            <a href="#" style="position: absolute; left: 840px; top: 980px; font-size: 15px">Air Jordan 1 High OG</a>
+            <a href="#" style="position: absolute; left: 890px; top: 1020px; font-size: 15px">565.00+$</a>
+        </a>
 
-             <a href="##"><img style=" position: absolute; left: 1110px; top: 740px" src="{% static 'images/07.jpg' %}">
-                 <a href="#" style="position: absolute; left: 1160px; top: 980px;font-size: 15px">Air Jordan 1 High OG</a>
-                 <a href="#" style="position: absolute; left: 1210px; top: 1020px;font-size: 15px">350.00+$</a>
-            </a>
-      </div>
+        <a href="##"><img style="position: absolute; left: 1110px; top: 740px" src="{% static 'images/08.jpg' %}" />
+            <a href="#" style="position: absolute; left: 1160px; top: 980px; font-size: 15px">Air Jordan 1 High OG</a>
+            <a href="#" style="position: absolute; left: 1210px; top: 1020px; font-size: 15px">350.00+$</a>
+        </a>
+    </div>
 
-      <a href="https://flightclub.com" class="button" style="position: absolute; left: 280px; top: 1080px;font-size: 15px">Show More</a>
-      
-   </section>
+    <a href="https://flightclub.com" class="button"
+        style="position: absolute; left: 280px; top: 1080px; font-size: 15px">Show More</a>
+</section>
 {% endblock %}

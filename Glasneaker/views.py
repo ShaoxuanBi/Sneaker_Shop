@@ -45,6 +45,8 @@ def check_login(request):
         print("登录成功")
         request.session['user_id'] = user.id
         request.session['user_name'] = user.username
+        request.session['cart'] = []
+        request.session['totalprice'] = 0
         return redirect('/')
     else:
         return HttpResponse("登录失败")
@@ -146,43 +148,48 @@ def order(request):
 
 
 def finished(request):
+    request.session['cart'] = []
+    request.session['totalprice'] = 0
     return render(request, "Glasneaker/finished.html")
 
 
 def product(request, id):
-    print(id)
-    return render(request, 'Glasneaker/product.html', context=None)
-    try:
-        brand = Brand.objects.get(id=id)
-        product = Product.objects.filter(brand=brand)
-        context_dict['brand'] = brand
-        context_dict['product'] = product
-    except Brand.DoesNotExist:
-        context_dict['brand'] = None
-        context_dict['product'] = None
-
-    return render(request, 'Glasneaker/product.html', context=context_dict)
+    prod = Product.objects.get(id=id)
+    item = {}
+    item['id'] = prod.id
+    item['brand'] = prod.brand
+    item['name'] = prod.productname
+    item['description'] = prod.description
+    item['picture'] = '''<a href="/static/images/%s" class="jqroom"><img src="/static/images/%s" ></a>''' % (
+        prod.picture, prod.picture)
+    item['price'] = prod.price
+    item['quantity'] = prod.quantity
+    return render(request, 'Glasneaker/product.html', item)
 
 
 def cart(request):
+    if request.method == "POST":
+        id = request.POST.get('id')
+        radio = request.POST.get('customRadioInline1', None)
+        number = request.POST.get('number')
+        prod = Product.objects.get(id=id)
+        price = float(prod.price)
+        item = {}
+        item['id'] = id
+        item['price'] = price
+        item['prices'] = int(number)*price
+        item['number'] = number
+        item['size'] = radio
+        item['name'] = prod.productname
+        item['picture'] = '''<img src='/static/images/%s'>''' % prod.picture
+        request.session['cart'].append(item)
+        request.session['totalprice'] += item['prices']
     return render(request, "Glasneaker/cart.html")
 
-# def cart_add(request, productID):
-#     cart = Cart(request)
-#     product = get_object_or_404(Product, id=productID)
-#     form = CartAddProductForm(request.POST)
-#     if form.is_valid():
-#         cd = form.cleaned_data
-#         cart.add(product=product,
-#                  quantity=cd['quantity'],
-#                  update_quantity=cd['update'])
-#     return redirect('Glasneaker:cart')
 
-# def cart_remove(request, productID):
-#     cart = Cart(request)
-#     product = get_object_or_404(Product, id=productID)
-#     cart.remove(product)
-#     return redirect('Glasneaker:cart')
+def cart_remove(request):
+    id = request.POST.get('id')
+    return render(request, "Glasneaker/cart.html")
 
 
 def comment(request):
