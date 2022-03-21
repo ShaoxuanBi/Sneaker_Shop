@@ -1,6 +1,6 @@
 $(function(){
 	   $("#skin li").click(function(){
-	   	    var index=$("#skin").find("li").index(this);/*获得的值是0,1,2,34，从0开始*/
+	   	    var index=$("#skin").find("li").index(this);
 	        $(this).addClass("selected").siblings().removeClass("selected");
 	        $("#skinStyle").attr("href","./css/skin/skin_"+index+".css");
 	        $.cookie("MyCssSkin",index,{path:'/',expires:10});
@@ -10,9 +10,9 @@ $(function(){
 			  $("#skin_"+cookieSkin).addClass("selected").siblings().removeClass("selected");
 			  $("#skinStyle").attr("href","./css/skin/skin_"+cookieSkin+".css");
 	   }
-	/*input.js  输入框效果*/
+	/*input.js  Input field effect*/
 	$("#my").focus(function(){
-		/*有默认情况，不用再改变边框了*/
+		/*By default, you don't have to change the border anymore*/
 		if($(this).val()==this.defaultValue){
 			$(this).val("");
 		}
@@ -26,25 +26,25 @@ $(function(){
 			alert("开始搜索");
 		}
 	})
-   /*skin.js  换肤效果*/
+   /*skin.js  In the skin effect*/
 
 
-   /*nav.js  导航效果*/
+   /*nav.js  Effect of navigation*/
    $(".nav li").hover(function(){
    	    $(this).find(".subItem").show();
      }, function(){
     	$(this).find(".subItem").hide();
    })
-   /*addhot.js热销效果*/
-   $(".classification .promoted").append("<s class='hot'></s>")/*jquery添加元素*/
-   /*  ad.js 大屏广告*/
+
+   $(".classification .promoted").append("<s class='hot'></s>")/*Jquery adds elements*/
+
    var index=0;
    var timer1=null;
    var len=$("#RsidePictureTurn div a").length;
    $("#RsidePictureTurn div a").mouseover(function(){
           index=$("#RsidePictureTurn div a").index(this);
           showImage(index);
-   }).eq(0).mouseover();/*用来初始化，显示第一个。eq：a在div中的索引*/
+   }).eq(0).mouseover();
    $("#RsidePictureTurn").hover(function(){
           if (timer1) {
           	clearInterval(timer1)
@@ -66,7 +66,7 @@ $(function(){
         iNow.removeClass("chos").css("opacity","0.7").eq(num).addClass("chos").css("opacity","1")
    }
 
-  /* 超链接提示，tooltip.js*/
+  /* Hyperlink prompt，tooltip.js*/
   var x=10;
   var y=10;
   $("#RsideBrand a").mouseover(function(e){
@@ -86,7 +86,7 @@ $(function(){
   	 $("#tooltip").remove();
 
   })
-  /*imgSlide.js横向滚动效果*/
+  /*imgSlide.js Horizontal scrolling effect*/
 
   $("#jnBrandTab a").click(function(){
         $(this).parent().addClass("chos").siblings().removeClass("chos");
@@ -99,7 +99,7 @@ $(function(){
       $("#jnBrandList").stop(true,false).animate({left:-totalMove*num},1000)/*不需要单位*/
   }
 
-  /*imgHover.js 光标划过*/
+  /*imgHover.js The cursor across*/
   $("#jnBrandList li").each(function(index){
       var $img=$(this).find("img");
       var imgW=$img.width();

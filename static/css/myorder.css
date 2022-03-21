@@ -242,7 +242,7 @@
 }
 
 
-/*订单详情*/
+/*Order details*/
 
 .you .orderList .orderList1,.you .orderList .orderList2{
 	border-bottom: 1px solid #E0E0E0;
@@ -337,7 +337,7 @@
 
 
 
-/*评价*/
+/*evaluation*/
 .Bott .you div.sx dl{
 	text-align: center;
 	width: 30%;
@@ -433,7 +433,7 @@
 	margin-top: -9px;
 }
 
-/*遮罩*/
+/*mask*/
 .mask{
 	position: fixed;
 	top: 0;
@@ -444,7 +444,7 @@
 	z-index: 20;
 	display: none;
 }
-/*编辑个人信息*/
+/*Edit personal Information*/
 .pj,.chak{
 	width: 410px;
 	position: absolute;

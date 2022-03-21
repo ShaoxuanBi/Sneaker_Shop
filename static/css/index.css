@@ -70,7 +70,7 @@
 	height: 80px;
 	line-height: 20px;
 	margin: 0px 5px 5px 10px;
-	font-family: courier new,courier,monospace;/* 改字体 */
+	font-family: courier new,courier,monospace;
 
 }
 #jnBrandContent  li figcaption:hover{
@@ -108,7 +108,7 @@
 	height: 60px;
 	line-height: 20px;
 	margin: 0px 5px 5px 10px;
-	font-family: courier new,courier,monospace;/* 改字体 */
+	font-family: courier new,courier,monospace;
 
 }
 #jnBrandContent1  li figcaption:hover{
@@ -121,8 +121,7 @@
 	filter: alpha(opacity=60);
 	opacity: 0.6;
 }
-/* 缺少内容 */
-/* 点击，无缝切换 */
+
 
 
 

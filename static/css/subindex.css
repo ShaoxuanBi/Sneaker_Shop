@@ -1,5 +1,5 @@
-    #header{/* 目的是自适应，保持最宽 */
-         background: url("../images/headerbg.png")    scroll 0 0 #888888;/* 默认重复，背景图片尺寸可选 */
+    #header{
+         background: url("../images/headerbg.png")    scroll 0 0 #888888;
          height: 100px;
      }
      #header .contWitch{
@@ -26,7 +26,7 @@
        padding: 3px 6px 5px 6px;
        font-size: 14px;
        color:#888888;
-       font-family: courier new,courier,monospace;/* 改字体 */
+       font-family: courier new,courier,monospace;
     }  
 
     .mainNav{
@@ -54,7 +54,7 @@
         font-weight: 200px;
         color: #FFFFFF;
         font-size: 18px;
-        font-family:serif;/* 改字体 */
+        font-family:serif;
         padding: 2px 14px;
     }
     .nav li>a:hover{
@@ -63,7 +63,7 @@
     }
 
 
-/*轮播鼠标悬停图片变大*/
+/*Wheel mouse hover pictures become larger*/
 .movieWrap .list div:hover{
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);

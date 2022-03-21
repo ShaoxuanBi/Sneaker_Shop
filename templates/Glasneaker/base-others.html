@@ -4,7 +4,7 @@
 
 <html>
 
-<head>   <!-- 网站标题，CSS模版，以及icon图标：-->
+<head>   <!-- Website title, CSS template, and icon：-->
       <title>
           {% block title_block %}
 
@@ -19,7 +19,7 @@
 
 
 <body>
-  <!-- 固定导航模版：-->
+  <!-- Fixed navigation template：-->
   <header id="header">
     <div class="contWitch">
       <a href="#nogo" class="logo"><img style=" height: 50px; width: 200px; position: absolute; left: -100px; top: 5px" src="{% static 'images/logo.jpeg' %}" alt="my Shop"></a>
@@ -29,8 +29,8 @@
           style="height: 25px; width: 700px; position: absolute; left: 180px; top: 15px">
         <img style="width: 25px; position: absolute; left: 860px; top: 20px" src="{% static 'images/zoom.gif' %}" />
         {% if request.session.user_name %}
-        <a style="font-size:16px;color:#000000; position: absolute; left: 900px; top: 22px">当前用户{{request.session.user_name}}</a>
-        <img style="height: 40px; width: 30px; position: absolute; left: 1020px; top: 10px" src="{% static 'images/shopcar.jpeg' %}" />
+        <a style="font-size:16px;color:#000000; position: absolute; left: 900px; top: 22px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{request.session.user_name}}</a>
+
         <a href="{% url 'cart' %}" class="shopcar" style="font-size:16px; position: absolute;color:#000000; left: 1060px; top: 22px"> Basket  </a>
         <a href="{% url 'logout' %}" class="logout" style="font-size:16px;color:#000000; position: absolute; left: 1120px; top: 22px">Logout</a>
         {% else %}
@@ -57,7 +57,7 @@
               <div class="subItem"></div>
             </div></li>
 
-          <li><a href="##">SECONDARY MARKET</a></li>
+          <li><a href="{% url 'secondary' %}">SECONDARY MARKET</a></li>
         </ul>
       </div>
 
@@ -74,7 +74,7 @@
     {% endblock %}
 </div>
 
-  <!-- 固定Java script的动态内容：-->
+  <!-- Fixed Java Script dynamic content:-->
   </section>
   <script type="text/javascript" src="{% static 'scripts/subindex.js' %}"></script>
   <script type="text/javascript" src="{% static 'scripts/jquery-1.js' %}"></script>

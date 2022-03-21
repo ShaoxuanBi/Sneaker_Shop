@@ -1,4 +1,3 @@
-# 呈现给用户界面的相应
 from unicodedata import name
 from django.conf import settings
 from django.http import HttpResponse
@@ -27,10 +26,10 @@ def check_register(request):
         new_user.fisrtname = fisrtname
         new_user.lastname = lastname
         new_user.save()
-        print("注册成功")
+        print("Registered successfully")
         return redirect('/login/')
     else:
-        return HttpResponse("注册失败,用户名和密码不能为空")
+        return HttpResponse("Failed to register. User name and password cannot be empty")
 
 
 def login(request):
@@ -42,14 +41,14 @@ def check_login(request):
     password = request.POST.get('password', None)
     user = User.objects.get(username=username)
     if user.password == password:
-        print("登录成功")
+        print("Login successful")
         request.session['user_id'] = user.id
         request.session['user_name'] = user.username
         request.session['cart'] = []
         request.session['totalprice'] = 0
         return redirect('/')
     else:
-        return HttpResponse("登录失败")
+        return HttpResponse("Feailed to login")
         # return redirect('/login/')
 
 

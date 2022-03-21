@@ -1,5 +1,5 @@
 $(function(){
-	/**************数量加减***************/
+	/**************The number of add and subtract***************/
 	$(".num .sub").click(function(){
 		var num = parseInt($(this).siblings("span").text());
 		if(num<=1){
@@ -7,9 +7,9 @@ $(function(){
 		}else{
 			num--;
 			$(this).siblings("span").text(num);
-			//获取除了货币符号以外的数字
+			//Gets numbers other than currency symbols
 			var price = $(this).parents(".number").prev().text().substring(1);
-			//单价和数量相乘并保留两位小数
+			//Multiply unit price and quantity and leave two decimal places
 			$(this).parents(".th").find(".sAll").text('￥'+(num*price).toFixed(2));
 			jisuan();
 			zg();
@@ -28,7 +28,7 @@ $(function(){
 			zg();
 		}
 	});
-	//计算总价
+	//Calculate the total price
 	function jisuan(){
 		var all=0;
 		var len =$(".th input[type='checkbox']:checked").length;
@@ -36,17 +36,17 @@ $(function(){
 			 $("#all").text('￥'+parseFloat(0).toFixed(2));
 		}else{
 			 $(".th input[type='checkbox']:checked").each(function(){
-			 	//获取小计里的数值
+			 	//Get the value in the subtotal
 	        	var sAll = $(this).parents(".pro").siblings('.sAll').text().substring(1);
-	        	//累加
+	        	//cumulative
 	        	all+=parseFloat(sAll);
-	        	//赋值
+	        	//The assignment
 	        	$("#all").text('￥'+all.toFixed(2));
 	        })
 		}
 		
 	}
-	//计算总共几件商品
+	//Count the total number of items
 	function zg(){
 		var zsl = 0;
 		var index = $(".th input[type='checkbox']:checked").parents(".th").find(".num span");
@@ -65,7 +65,7 @@ $(function(){
 			$(".count").css("background","#8e8e8e");
 		}
 	}
-	/*****************商品全选***********************/
+	/*****************All goods***********************/
 	$("input[type='checkbox']").on('click',function(){
 		var sf = $(this).is(":checked");
 		var sc= $(this).hasClass("checkAll");
@@ -108,7 +108,7 @@ $(function(){
 		}
 		
 	});
-	/****************************proDetail 加入购物车*******************************/
+	/****************************proDetail Add to shopping cart*******************************/
 	$(".btns .cart").click(function(){
 		if($(".categ p").hasClass("on")){
 			var num = parseInt($(".num span").text());
@@ -117,9 +117,9 @@ $(function(){
 		}
 	});
 	
-	//删除购物车商品
+	//Delete cart items
 	$('.del').click(function(){
-		//单个删除
+		//A single delete
 		if($(this).parent().parent().hasClass("th")){
 			$(".mask").show();
 			$(".tipDel").show();
@@ -134,7 +134,7 @@ $(function(){
 				}
 			})
 		}else{
-			//选中多个一起删除
+			//Select multiple and delete them together
 			if($(".th input[type='checkbox']:checked").length==0){
 				$(".mask").show();
 				$(".pleaseC").show();
@@ -162,7 +162,7 @@ $(function(){
 		$(".mask").hide();
 		$(".tipDel").hide();
 	})
-	//改变商品规格
+
 //	$(".pro dd").hover(function(){
 //		var html='';
 //		html='<span class="edit">修改</span>';
