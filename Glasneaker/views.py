@@ -57,7 +57,27 @@ def logout(request):
 
 
 def index(request):
-    return render(request, "Glasneaker/index.html")
+    brand = Brand.objects.get(name="airjordan")
+    prod = Product.objects.filter(brand=brand)[:6]
+    data1 = []
+    for item in prod:
+        i = {}
+        i['id'] = item.id
+        i['name'] = item.productname
+        i['picture'] = '''<img src='/static/images/%s'>''' % item.picture
+        i['price'] = item.price
+        data1.append(i)
+    brand = Brand.objects.get(name="yeezy")
+    prod = Product.objects.filter(brand=brand)[:6]
+    data2 = []
+    for item in prod:
+        i = {}
+        i['id'] = item.id
+        i['name'] = item.productname
+        i['picture'] = '''<img src='/static/images/%s'>''' % item.picture
+        i['price'] = item.price
+        data2.append(i)
+    return render(request, "Glasneaker/index.html", {"data1": data1, "data2": data2})
 
 
 def airjordan(request):
@@ -76,15 +96,49 @@ def airjordan(request):
 
 
 def yeezy(request):
-    return render(request, "Glasneaker/yeezy.html")
+    brand = Brand.objects.get(name="yeezy")
+    prod = Product.objects.filter(brand=brand)
+
+    data = []
+    for item in prod:
+        i = {}
+        i['id'] = item.id
+        i['name'] = item.productname
+        i['picture'] = '''<img src='/static/images/%s'>''' % item.picture
+        i['price'] = item.price
+        data.append(i)
+    # print(data)
+    return render(request, "Glasneaker/yeezy.html", {"data": data})
 
 
 def nike(request):
-    return render(request, "Glasneaker/Nike.html")
+    brand = Brand.objects.get(name="airjordan")
+    prod = Product.objects.filter(brand=brand)
+    data = []
+    for item in prod:
+        i = {}
+        i['id'] = item.id
+        i['name'] = item.productname
+        i['picture'] = '''<img src='/static/images/%s'>''' % item.picture
+        i['price'] = item.price
+        data.append(i)
+    return render(request, "Glasneaker/Nike.html", {"data": data})
 
 
 def adidas(request):
-    return render(request, "Glasneaker/Adidas.html")
+    brand = Brand.objects.get(name="yeezy")
+    prod = Product.objects.filter(brand=brand)
+
+    data = []
+    for item in prod:
+        i = {}
+        i['id'] = item.id
+        i['name'] = item.productname
+        i['picture'] = '''<img src='/static/images/%s'>''' % item.picture
+        i['price'] = item.price
+        data.append(i)
+    # print(data)
+    return render(request, "Glasneaker/Adidas.html", {"data": data})
 
 
 def order(request):
@@ -111,10 +165,6 @@ def product(request, id):
 
 
 def cart(request):
-    # cart = cart(request)
-    # for item in cart:
-    #     item['update_quantity_form'] = CartAddProductForm(initial={'quantity': item['quantity']})
-    # return render(request, 'cart.html', {'cart': cart})
     return render(request, "Glasneaker/cart.html")
 
 # def cart_add(request, productID):
@@ -135,7 +185,6 @@ def cart(request):
 #     return redirect('Glasneaker:cart')
 
 
-@login_required
 def comment(request):
     return render(request, "Glasneaker/comment.html")
 

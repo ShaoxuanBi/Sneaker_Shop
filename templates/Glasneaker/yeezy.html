@@ -1,6 +1,11 @@
 {% extends 'Glasneaker/base-category.html' %}
 {% load staticfiles %}
-{% block title_block %} YEEZY {% endblock %} {% block body_block %}
+
+{% block title_block %}
+YEEZY
+{% endblock %}
+
+{% block body_block %}
 <style>
   #jnBrandList {
     margin-top: 250px;
@@ -28,7 +33,7 @@
           {{ item.name }}
         </figcaption>
       </figure>
-      <div align="center" style="font-size: 15px;margin-top: 5px;">{{ item.price }}</div>
+      <div align="center" style="font-size: 15px;margin-top: 5px;">{{ item.price }}$</div>
     </a></li>
   {% endfor %}
 </div>

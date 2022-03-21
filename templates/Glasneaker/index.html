@@ -1,6 +1,49 @@
 {% extends 'Glasneaker/base.html' %} {% load staticfiles %}
-{% block title_block %} Glasgow sneaker market {% endblock %} {% block body_block %}
-<!-- 修改部分：-->
+
+{% block title_block %}
+Glasgow sneaker market
+{% endblock %} {% block body_block %}
+<style>
+  .clearfix:before,
+  .clearfix:after {
+    content: "";
+    display: table;
+  }
+
+  .clearfix:after {
+    clear: both;
+  }
+
+  .clearfix {
+    *zoom: 1;
+  }
+
+  #jnBrandList1 {
+    margin-top: 650px;
+    width: 1200px;
+  }
+
+  #jnBrandList1 li {
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+  }
+
+  #jnBrandList2 {
+    margin-top: 850px;
+    width: 1200px;
+  }
+
+  #jnBrandList2 li {
+    float: left;
+    width: 300px;
+    height: 300px;
+    margin-left: 40px;
+    margin-bottom: 50px;
+  }
+</style>
 <div>
   <strong>{{ testmessage }}</strong>
 </div>
@@ -23,184 +66,42 @@
     <div align="center" style="font-size: 25px">
       "The Best-Selling every month"
     </div>
-    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
 
-    <div align="left" style="font-size: 25px">Yeezy series:</div>
-    <div id="jnBrandContent">
-      <div id="jnBrandList">
-        <ul>
-          <li>
-            <a href="">
-              <figure>
-                <img src="{% static 'images/yeezy07.jpeg' %}" />
-                <figcaption>
-                  ADIDAS<br />
-                  Yezzy Boost 350V2<br />
-                  "Cream"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">480.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <figure>
-                <img src="{% static 'images/yeezy16.jpeg' %}" />
-                <figcaption>
-                  ADIDAS<br />
-                  Yezzy Boost 350V2<br />
-                  "Triple Black"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">1005.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <figure>
-                <img src="{% static 'images/yeezy11.jpeg' %}" />
-                <figcaption>
-                  ADIDAS<br />
-                  Yezzy Boost 700V2<br />
-                  "Static Wave"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">525.00$</div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="jnBrandContent1">
-      <div id="jnBrandList1">
-        <ul>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/yeezy04.jpeg' %}" />
-                <figcaption>
-                  ADIDAS<br />
-                  Yezzy Boost 700<br />
-                  "Mauve"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">350.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/yeezy05.jpeg' %}" />
-                <figcaption>
-                  Yeezy Boost 350V2<br />
-                  "Lundmark"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">235.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/yeezy06.jpeg' %}" />
-                <figcaption>
-                  ADIDAS<br />
-                  Yezzy Boost 350V2<br />
-                  "Clay"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">560.00$</div>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div id="jnBrandList1" class="clearfix">
+      <div align="left" style="font-size: 25px">AIR JORDAN series:</div>
+
+      {% for item in data1 %}
+      <li><a href="/product/{{item.id}}">
+          <figure>
+            {{item.picture | safe}}
+            <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+              {{ item.name }}
+            </figcaption>
+          </figure>
+          <div align="center" style="font-size: 15px;margin-top: 5px;">{{ item.price }}$</div>
+        </a></li>
+      {% endfor %}
+      <a href="/airjordan/" class="button">Show More</a>
     </div>
 
-    <a href="https://flightclub.com" class="button">Show More</a>
+    <div class="clearfix"></div>
 
-    <div align="left" style="font-size: 25px">AIR JORDAN series:</div>
-    <div id="jnBrandContent">
-      <div id="jnBrandList">
-        <ul>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/14.jpeg' %}" />
-                <figcaption>
-                  Air Jordan 1 Retro High OG<br />
-                  "Black Toe"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">450.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/11.jpg' %}" />
-                <figcaption>
-                  Air Jordan 1 High OG<br />"Court Purple "
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">1100.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/08.jpg' %}" />
-                <figcaption>
-                  Air Jordan 1 High OG<br />
-                  "Crimson"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">290.00$</div>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div id="jnBrandList2" class="clearfix">
+      <div align="left" style="font-size: 25px">Yeezy series:</div>
+      {% for item in data2 %}
+      <li><a href="/product/{{item.id}}">
+          <figure>
+            {{item.picture | safe}}
+            <figcaption align="center" style="font-size: 15px;margin-top: 5px;">
+              {{ item.name }}
+            </figcaption>
+          </figure>
+          <div align="center" style="font-size: 15px;margin-top: 5px;">{{ item.price }}$</div>
+        </a></li>
+      {% endfor %}
+      <a href="/yeezy/" class="button">Show More</a>
     </div>
-    <div id="jnBrandContent1">
-      <div id="jnBrandList1">
-        <ul>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/19.jpeg' %}" />
-                <figcaption>
-                  Air Jordan 4 (Gs) <br />
-                  "2012 Release"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">225.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/21.jpeg' %}" />
-                <figcaption>Air Jordan 4 <br />"Cool Grey "</figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">275.00$</div>
-            </a>
-          </li>
-          <li>
-            <a href="###!">
-              <figure>
-                <img src="{% static 'images/22.jpg' %}" />
-                <figcaption>
-                  Air Jordan 4 Retro<br />
-                  "Pale Citron"
-                </figcaption>
-              </figure>
-              <div align="center" style="font-size: 15px">140.00$</div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <a href="https://flightclub.com" class="button">Show More</a>
-
+    <div class="clearfix"></div>
     <div align="left" style="font-size: 35px">OUR STORES</div>
     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
     <div>
